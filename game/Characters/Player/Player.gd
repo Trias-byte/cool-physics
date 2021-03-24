@@ -18,6 +18,7 @@ var direction = Vector2()
 func _ready():
 	set_physics_process(true)
 	set_process(true)
+	
 	$spr.frame = 3
 
 func _process(delta):
@@ -146,11 +147,3 @@ func _on_Door_body_entered(body):
 	if body is KinematicBody2D and $"../Door/spr".animation == "open":
 		open_door = true
 
-func _on_Door_body_exited(body):
-	if body is KinematicBody2D:
-		open_door = false 
-
-
-func _on_Area2D_area_entered(area):
-	print('yep')
-	pass # Replace with function body.
