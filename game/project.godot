@@ -16,12 +16,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Indie Libre - Platformer 2D"
-run/main_scene="res://Levels/level1.tscn"
+run/main_scene="res://water2.tscn"
 config/icon="res://Graphics/PNG/Players/Variable sizes/Blue/alienBlue_swim1.png"
 
 [autoload]
 
 global_var="*res://Codes/global_var.gd"
+BoxStone="*res://box_stone.gd"
 
 [display]
 

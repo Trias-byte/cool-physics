@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://stone.png" type="Texture" id=2]
@@ -7,13 +7,9 @@
 [ext_resource path="res://arh.png" type="Texture" id=5]
 [ext_resource path="res://Levels/arh.gd" type="Script" id=6]
 [ext_resource path="res://boat.png" type="Texture" id=7]
-[ext_resource path="res://water2.png" type="Texture" id=9]
+[ext_resource path="res://wa.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Stone_for_move.png" type="Texture" id=10]
 [ext_resource path="res://Levels/CollisionShape2D.gd" type="Script" id=11]
-[ext_resource path="res://water1.png" type="Texture" id=12]
-[ext_resource path="res://water3.png" type="Texture" id=13]
-[ext_resource path="res://water0.png" type="Texture" id=14]
-[ext_resource path="res://water4.png" type="Texture" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 641.27, 240.465 )
@@ -42,31 +38,20 @@ extents = Vector2( 55.9237, 4.63385 )
 [sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 19.6769, 24.2179 )
 
-[sub_resource type="PhysicsMaterial" id=14]
-
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 35.9619, 36.3409 )
-
-[sub_resource type="PhysicsMaterial" id=15]
+[sub_resource type="PhysicsMaterial" id=10]
 
 [sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 35.9619, 36.3409 )
+
+[sub_resource type="PhysicsMaterial" id=12]
+
+[sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 36.1809, 36.5016 )
-
-[sub_resource type="SpriteFrames" id=16]
-animations = [ {
-"frames": [ ExtResource( 14 ), ExtResource( 12 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-} ]
-
-[sub_resource type="RectangleShape2D" id=17]
-extents = Vector2( 154.963, 94.8416 )
 
 [node name="Node" type="Node"]
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 583.451, 270.758 )
+position = Vector2( 584.081, 270.758 )
 
 [node name="camera" type="Camera2D" parent="Player"]
 position = Vector2( 53.6211, 89.7766 )
@@ -555,17 +540,14 @@ scale = Vector2( 1.40731, 0.981838 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TileMaps/StaticBody2D"]
-visible = false
 position = Vector2( 605.728, 222.186 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="TileMaps/StaticBody2D"]
-visible = false
 position = Vector2( 620.114, -1072.55 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TileMaps/StaticBody2D"]
-visible = false
 position = Vector2( 905.015, -148.998 )
 shape = SubResource( 2 )
 
@@ -600,17 +582,14 @@ scale = Vector2( 1.40731, 0.981838 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="TileMaps/StaticBody2D"]
-visible = false
 position = Vector2( 479.352, -138.798 )
 shape = SubResource( 3 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="TileMaps/StaticBody2D"]
-visible = false
 position = Vector2( 92.2057, -564.422 )
 shape = SubResource( 4 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="TileMaps/StaticBody2D"]
-visible = false
 position = Vector2( 869.755, -416.803 )
 shape = SubResource( 5 )
 
@@ -690,7 +669,6 @@ scale = Vector2( 1.69453, 0.981838 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="TileMaps/StaticBody2D"]
-visible = false
 position = Vector2( 96.266, -558.429 )
 shape = SubResource( 4 )
 
@@ -790,7 +768,6 @@ scale = Vector2( 1.69453, 0.981838 )
 texture = ExtResource( 2 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="TileMaps/StaticBody2D"]
-visible = false
 position = Vector2( 872.93, -415.216 )
 shape = SubResource( 5 )
 
@@ -800,7 +777,6 @@ position = Vector2( -253.576, -298.764 )
 shape = SubResource( 6 )
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="TileMaps/StaticBody2D"]
-visible = false
 position = Vector2( 1493.52, -329.259 )
 shape = SubResource( 6 )
 
@@ -838,34 +814,36 @@ position = Vector2( 167.389, 460.237 )
 scale = Vector2( 1.28573, 1.11339 )
 texture = ExtResource( 5 )
 
-[node name="boat" type="KinematicBody2D" parent="."]
+[node name="Body" type="KinematicBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="boat"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Body"]
 position = Vector2( 164.611, 523.28 )
 shape = SubResource( 8 )
 
-[node name="Sprite" type="Sprite" parent="boat"]
+[node name="Sprite" type="Sprite" parent="Body"]
 position = Vector2( 160.248, 502.759 )
 scale = Vector2( 0.639593, 0.599547 )
 texture = ExtResource( 7 )
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="boat"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Body"]
 position = Vector2( 127.876, 503.081 )
 shape = SubResource( 9 )
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="boat"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Body"]
 position = Vector2( 202.677, 503.045 )
 shape = SubResource( 9 )
+
+[node name="Node" parent="." instance=ExtResource( 8 )]
 
 [node name="box_stone" type="RigidBody2D" parent="."]
 mode = 2
 mass = 65535.0
-physics_material_override = SubResource( 14 )
+physics_material_override = SubResource( 10 )
 gravity_scale = 2.07
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="box_stone"]
 position = Vector2( 865.88, 202.75 )
-shape = SubResource( 10 )
+shape = SubResource( 11 )
 
 [node name="Sprite" type="Sprite" parent="box_stone/CollisionShape2D"]
 position = Vector2( -0.420536, -0.64018 )
@@ -874,11 +852,11 @@ texture = ExtResource( 10 )
 
 [node name="box_wood" type="RigidBody2D" parent="."]
 mode = 2
-physics_material_override = SubResource( 15 )
+physics_material_override = SubResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="box_wood"]
 position = Vector2( 989.041, 203.136 )
-shape = SubResource( 11 )
+shape = SubResource( 13 )
 one_way_collision_margin = 0.0
 script = ExtResource( 11 )
 
@@ -886,16 +864,5 @@ script = ExtResource( 11 )
 position = Vector2( 1.3071, -0.466035 )
 scale = Vector2( 1.50333, 1.47504 )
 texture = ExtResource( 4 )
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D"]
-position = Vector2( 824, 538 )
-frames = SubResource( 16 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 1096, 596 )
-shape = SubResource( 17 )
 [connection signal="body_entered" from="swim_zone" to="Player" method="_on_swim_zone_body_entered"]
 [connection signal="body_exited" from="swim_zone" to="Player" method="_on_swim_zone_body_exited"]
-[connection signal="area_entered" from="Area2D" to="Player" method="_on_Area2D_area_entered"]
