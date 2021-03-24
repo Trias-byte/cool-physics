@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Levels/arh.gd" type="Script" id=1]
+[ext_resource path="res://boat.png" type="Texture" id=2]
+[ext_resource path="res://arh.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 12.6702, 56.2737 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 55.9237, 4.63385 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 19.6769, 24.2179 )
+
+[node name="arh" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 165.313, 432.072 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 167.389, 431.237 )
+scale = Vector2( 1.28573, 1.11339 )
+texture = ExtResource( 3 )
+
+[node name="boat" type="KinematicBody2D" parent="."]
+position = Vector2( 1.52588e-05, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boat"]
+position = Vector2( 164.611, 494.28 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="boat"]
+position = Vector2( 160.248, 473.759 )
+scale = Vector2( 0.639593, 0.599547 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="boat"]
+position = Vector2( 127.876, 474.081 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="boat"]
+position = Vector2( 202.677, 474.045 )
+shape = SubResource( 3 )

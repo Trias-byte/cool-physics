@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-var box = null
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
