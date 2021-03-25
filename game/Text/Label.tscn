@@ -1,22 +1,27 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Text/Label.tres" type="StyleBox" id=1]
 [ext_resource path="res://Graphics/Font/kenvector_future.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Text/TextEdit.gd" type="Script" id=3]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="Theme" id=1]
+
+[sub_resource type="DynamicFont" id=2]
 size = 14
 font_data = ExtResource( 2 )
 
 [node name="Label" type="Label"]
-margin_left = 217.0
-margin_top = 374.0
-margin_right = 454.0
-margin_bottom = 422.0
+margin_left = 199.0
+margin_top = 276.0
+margin_right = 411.0
+margin_bottom = 321.0
+theme = SubResource( 1 )
 custom_styles/normal = ExtResource( 1 )
-custom_fonts/font = SubResource( 1 )
-text = "текст подсказки"
+custom_fonts/font = SubResource( 2 )
+custom_constants/shadow_offset_y = 1
+text = "текст"
 autowrap = true
+uppercase = true
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false

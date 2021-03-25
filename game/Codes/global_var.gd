@@ -3,7 +3,8 @@ var upp = false
 var lives = 4
 var coins = 0
 var punto
-
+var door_entered = false 
+var door_opened = false
 func _ready():
 	self.pause_mode = PAUSE_MODE_PROCESS
 
