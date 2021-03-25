@@ -1,24 +1,21 @@
 extends AnimatedSprite
-# var a = 2
-# var b = "text
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
+var done = false
 
 
 func _on_Area2D_body_entered(body):
-	var box_stone = get_node('stone')
-	print(box_stone)
-	print(body)
-	print('yr')
-	play('true_water', true)
-	pass # Replace with function body.
-
-
+	if body.is_in_group('stone'):
+		play('true_water', true)
+		done = true
+		wait(1.1)
+	if body.is_in_group('wood') and done == false:
+		play('false_water' , true)
+		
+func wait(s):
+	var t = Timer.new()
+	t.set_wait_time(s)
+	t.set_one_shot(true)
+	add_child(t)
+	t.start()
+	yield(t, "timeout")
+	t.queue_free()
+	global_var.upp = true

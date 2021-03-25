@@ -1,5 +1,5 @@
 extends Node
-
+var upp = false
 var lives = 4
 var coins = 0
 var punto
