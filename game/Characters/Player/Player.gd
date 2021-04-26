@@ -47,7 +47,7 @@ func _process(delta):
 
 
 	if $"../../UI/Joystick".is_working:
-		if ($"../../UI/Joystick".output)[0] > -0.5 and ($"../../UI/Joystick".output)[0] < 0.5 and ($"../../UI/Joystick".output)[1] < -0.5:
+		if self.is_on_floor() and ($"../../UI/Joystick".output)[0] > -0.5 and ($"../../UI/Joystick".output)[0] < 0.5 and ($"../../UI/Joystick".output)[1] < -0.5:
 			velocity.y = -jump_speed
 			direction.y = 1
 		else:
