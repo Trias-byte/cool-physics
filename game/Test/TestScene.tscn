@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://jump/player1.png" type="Texture" id=1]
 [ext_resource path="res://player2.png" type="Texture" id=2]
@@ -40,6 +40,7 @@
 [ext_resource path="res://Joystick/Joystick.gd" type="Script" id=38]
 [ext_resource path="res://Joystick/joystick_background_cross.png" type="Texture" id=39]
 [ext_resource path="res://Joystick/joystick_handle.png" type="Texture" id=40]
+[ext_resource path="res://Test/Button.gd" type="Script" id=41]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -159,24 +160,37 @@ __meta__ = {
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2( -1.03998, 496.794 )
 
-[node name="Player" type="KinematicBody2D" parent="Node2D"]
+[node name="Player" type="KinematicBody2D" parent="Node2D" groups=[
+"player",
+]]
 position = Vector2( 642.487, 102.431 )
 z_index = 100
 script = ExtResource( 22 )
 
 [node name="spr" type="AnimatedSprite" parent="Node2D/Player"]
-position = Vector2( -0.644593, 56.7215 )
+position = Vector2( -44.0269, -30.7105 )
 scale = Vector2( 1, 0.833761 )
 frames = SubResource( 1 )
 
 [node name="col" type="CollisionShape2D" parent="Node2D/Player"]
-position = Vector2( 2.25824, 56.5014 )
+position = Vector2( -43.7764, -30.8056 )
 scale = Vector2( 3.67988, 0.870676 )
 shape = SubResource( 2 )
 
 [node name="time_shield" type="Timer" parent="Node2D/Player"]
 wait_time = 0.8
 one_shot = true
+
+[node name="Button" type="Button" parent="Node2D"]
+margin_left = 584.0
+margin_top = -509.0
+margin_right = 1246.0
+margin_bottom = 390.0
+toggle_mode = true
+script = ExtResource( 41 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="background" type="Sprite" parent="."]
 position = Vector2( 620.897, 446.958 )
@@ -1657,4 +1671,6 @@ __meta__ = {
 pause_mode = 2
 position = Vector2( 622.2, 443.53 )
 zoom = Vector2( 0.65, 0.825 )
+[connection signal="button_up" from="Node2D/Button" to="arh" method="_on_Button_button_up"]
 [connection signal="body_entered" from="Area2D" to="Area2D/AnimatedSprite" method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="door" to="Node2D/Player" method="_on_door_body_entered"]

@@ -13,14 +13,6 @@ var text = ['-Кто там?',
 # var b = "text"
 # Called when the node enters the scene tree for the first time.
 func _process(delta):
-	if Input.is_action_just_pressed("ui_down") and global_var.door_entered == true:
-		if text_actual != null:
-			text_actual.queue_free()
-		if num_of_text <=6:
-			_speak(text[num_of_text])
-		else:
-			_speak('- F=P*g*V')
-		num_of_text+=1
 	if global_var.upp == true:
 		move_local_x(100)
 		move_local_y(-20)
@@ -31,10 +23,9 @@ func _process(delta):
 		_speak('Спасибо что помог Давай выбираться отсюда!')
 		$"../door/door_anim".play('default', true)
 		$"../door/StaticBody2D/CollisionShape2D".set_disabled(true)
-		
+		global_var.door_entered == false
 	
-	
-	
+
 
 func _speak(text):
 	var container_text = load("res://Text/Label.tscn").instance()
@@ -44,3 +35,14 @@ func _speak(text):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Button_button_up():
+	if global_var.door_entered == true:
+		if text_actual != null:
+			text_actual.queue_free()
+		if num_of_text <=6:
+			_speak(text[num_of_text])
+		else:
+			_speak('- F=P*g*V')
+		num_of_text+=1

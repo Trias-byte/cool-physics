@@ -52,75 +52,16 @@ func _process(delta):
 			direction.y = 1
 		else:
 			var _velocity = move_and_slide($"../../UI/Joystick".output * speed)
+			if ($"../../UI/Joystick".output)[0] > 0:
+				$spr.flip_h = false
+			elif ($"../../UI/Joystick".output)[0] < 0:
+				$spr.flip_h = true
 	#_move(delta)
 	jump_speed = 600
 	gravity = 1300
 	velocity.y += gravity*delta
 	
 	move_and_slide(velocity,Vector2(0,-1))
-
-
-
-func _move(delta):
-	direction.x = int(Input.is_action_pressed("ui_right"))-int(Input.is_action_pressed("ui_left"))
-	
-	if direction.y != 0 and swim == false:
-		$spr.animation = "jump"
-		$spr.playing = true
-		
-	if direction.x != 0 and direction.y == 0 and swim == false and open_door == false:
-		$spr.animation = "mov"
-		$spr.playing = true
-		
-	elif direction.x == 0 and direction.y == 0 and swim == false and open_door == false:
-		$spr.playing = false
-		$spr.animation = "stop"
-	
-	if direction.x > 0:
-		$spr.flip_h = false
-	elif direction.x < 0:
-		$spr.flip_h = true
-	
-	distance.x = speed*delta
-	velocity.x = (direction.x*distance.x)/delta
-	velocity.y += gravity*delta
-	
-	move_and_slide(velocity,Vector2(0,-1))
-	
-	var get_col = get_slide_collision(get_slide_count()-1)
-	
-	if is_on_floor():
-		velocity.y = 0
-		direction.y = 0
-		
-		if Input.is_action_just_pressed("ui_up"):
-			velocity.y = -jump_speed
-			direction.y = 1
-	
-	if get_col != null:
-		if get_col.normal == Vector2(0,1):
-			velocity.y = 0
-		
-		if get_col.collider.is_in_group("box") and get_col.normal == Vector2(0,1):
-			if get_col.collider.is_in_group("boxCoin") and get_col.collider.get_node("spr").frame == 0:
-				get_col.collider._spawn_coin()
-				
-			get_col.collider._move()
-		
-		elif get_col.collider.is_in_group("coin"):
-			get_col.collider.queue_free()
-			global_var.coins += 1
-		elif get_col.collider.is_in_group("enemy") and get_col.normal == Vector2(0,-1):
-			get_col.collider.queue_free()
-
-
-
-
-
-
-
-
-			
 
 
 
