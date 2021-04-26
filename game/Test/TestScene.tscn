@@ -1,36 +1,90 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=61 format=2]
 
-[ext_resource path="res://sprites/water/water5.png" type="Texture" id=1]
-[ext_resource path="res://sprites/water/water4.png" type="Texture" id=2]
-[ext_resource path="res://sprites/water/water1.png" type="Texture" id=3]
-[ext_resource path="res://sprites/water/water0.png" type="Texture" id=4]
-[ext_resource path="res://sprites/water/water3.png" type="Texture" id=5]
-[ext_resource path="res://sprites/water/water2.png" type="Texture" id=6]
-[ext_resource path="res://sprites/bad_water/b_water2.png" type="Texture" id=7]
-[ext_resource path="res://sprites/bad_water/b_water0.png" type="Texture" id=8]
+[ext_resource path="res://jump/player1.png" type="Texture" id=1]
+[ext_resource path="res://player2.png" type="Texture" id=2]
+[ext_resource path="res://player4.png" type="Texture" id=3]
+[ext_resource path="res://box_stone.gd" type="Script" id=4]
+[ext_resource path="res://wood.png" type="Texture" id=5]
+[ext_resource path="res://sprites/bad_water/b_water2.png" type="Texture" id=6]
+[ext_resource path="res://sprites/water/water2.png" type="Texture" id=7]
+[ext_resource path="res://sprites/water/water1.png" type="Texture" id=8]
 [ext_resource path="res://sprites/bad_water/b_water1.png" type="Texture" id=9]
-[ext_resource path="res://box_stone.gd" type="Script" id=10]
-[ext_resource path="res://arh.tscn" type="PackedScene" id=11]
-[ext_resource path="res://door3.png" type="Texture" id=12]
-[ext_resource path="res://background.png" type="Texture" id=13]
-[ext_resource path="res://wood.png" type="Texture" id=14]
-[ext_resource path="res://door1.png" type="Texture" id=15]
-[ext_resource path="res://Characters/Player/Player.tscn" type="PackedScene" id=16]
-[ext_resource path="res://stone.png" type="Texture" id=17]
-[ext_resource path="res://Stone_for_move.png" type="Texture" id=18]
-[ext_resource path="res://door2.png" type="Texture" id=19]
-[ext_resource path="res://1.png" type="Texture" id=20]
-[ext_resource path="res://AnimatedSprite.gd" type="Script" id=21]
-[ext_resource path="res://Test/TestScene.tscn" type="PackedScene" id=22]
+[ext_resource path="res://sprites/bad_water/b_water0.png" type="Texture" id=10]
+[ext_resource path="res://door1.png" type="Texture" id=11]
+[ext_resource path="res://sprites/water/water4.png" type="Texture" id=12]
+[ext_resource path="res://door3.png" type="Texture" id=13]
+[ext_resource path="res://sprites/water/water5.png" type="Texture" id=14]
+[ext_resource path="res://sprites/water/water0.png" type="Texture" id=15]
+[ext_resource path="res://sprites/water/water3.png" type="Texture" id=16]
+[ext_resource path="res://background.png" type="Texture" id=17]
+[ext_resource path="res://stone.png" type="Texture" id=18]
+[ext_resource path="res://Stone_for_move.png" type="Texture" id=19]
+[ext_resource path="res://AnimatedSprite.gd" type="Script" id=20]
+[ext_resource path="res://Levels/arh.gd" type="Script" id=21]
+[ext_resource path="res://Characters/Player/Player.gd" type="Script" id=22]
+[ext_resource path="res://Graphics/PNG/Players/128x256/Blue/alienBlue_climb1.png" type="Texture" id=23]
+[ext_resource path="res://arh.tscn" type="PackedScene" id=24]
+[ext_resource path="res://1.png" type="Texture" id=25]
+[ext_resource path="res://door2.png" type="Texture" id=26]
+[ext_resource path="res://Graphics/PNG/Players/128x256/Blue/alienBlue_climb2.png" type="Texture" id=27]
+[ext_resource path="res://Graphics/PNG/Players/128x256/Blue/alienBlue_swim1.png" type="Texture" id=28]
+[ext_resource path="res://Graphics/PNG/Players/128x256/Blue/alienBlue_swim2.png" type="Texture" id=29]
+[ext_resource path="res://jump/player2.png" type="Texture" id=30]
+[ext_resource path="res://player1.png" type="Texture" id=31]
+[ext_resource path="res://player5.png" type="Texture" id=32]
+[ext_resource path="res://player0.png" type="Texture" id=33]
+[ext_resource path="res://jump/player3.png" type="Texture" id=34]
+[ext_resource path="res://jump/player5.png" type="Texture" id=35]
+[ext_resource path="res://jump/player4.png" type="Texture" id=36]
+[ext_resource path="res://player3.png" type="Texture" id=37]
+[ext_resource path="res://Joystick/Joystick.gd" type="Script" id=38]
+[ext_resource path="res://Joystick/joystick_background_cross.png" type="Texture" id=39]
+[ext_resource path="res://Joystick/joystick_handle.png" type="Texture" id=40]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 33 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 33 ) ],
+"loop": true,
+"name": "stop",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 23 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "open_door",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "swim",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 33 ), ExtResource( 31 ), ExtResource( 2 ), ExtResource( 37 ), ExtResource( 3 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "mov",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 1 ), ExtResource( 30 ), ExtResource( 34 ), ExtResource( 34 ), ExtResource( 34 ), ExtResource( 36 ), ExtResource( 35 ) ],
+"loop": false,
+"name": "jump",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 4.11494, 69.3052 )
 
 [sub_resource type="SpriteFrames" id=19]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"frames": [ ExtResource( 14 ), ExtResource( 12 ), ExtResource( 16 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 15 ) ],
 "loop": false,
 "name": "true_water",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 6 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": false,
 "name": "false_water",
 "speed": 5.0
@@ -75,7 +129,7 @@ extents = Vector2( 10.735, 97.9802 )
 
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 13 ), ExtResource( 11 ), ExtResource( 26 ), ExtResource( 13 ) ],
 "loop": false,
 "name": "default",
 "speed": 5.0
@@ -98,13 +152,39 @@ absorbent = true
 extents = Vector2( 37.8658, 36.6793 )
 
 [node name="Node" type="Node"]
+__meta__ = {
+"_edit_horizontal_guides_": [ -98.856, -623.118 ]
+}
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2( -1.03998, 496.794 )
+
+[node name="Player" type="KinematicBody2D" parent="Node2D"]
+position = Vector2( 642.487, 102.431 )
+z_index = 100
+script = ExtResource( 22 )
+
+[node name="spr" type="AnimatedSprite" parent="Node2D/Player"]
+position = Vector2( -0.644593, 56.7215 )
+scale = Vector2( 1, 0.833761 )
+frames = SubResource( 1 )
+
+[node name="col" type="CollisionShape2D" parent="Node2D/Player"]
+position = Vector2( 2.25824, 56.5014 )
+scale = Vector2( 3.67988, 0.870676 )
+shape = SubResource( 2 )
+
+[node name="time_shield" type="Timer" parent="Node2D/Player"]
+wait_time = 0.8
+one_shot = true
 
 [node name="background" type="Sprite" parent="."]
-position = Vector2( 635.151, 279.469 )
+position = Vector2( 620.897, 446.958 )
 scale = Vector2( 1.55013, 1.43951 )
-texture = ExtResource( 13 )
+texture = ExtResource( 17 )
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2( -14.2543, 167.489 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D"]
 position = Vector2( 640.197, 529.369 )
@@ -112,20 +192,14 @@ scale = Vector2( 1.43394, 1.08782 )
 frames = SubResource( 19 )
 animation = "true_water"
 frame = 5
-script = ExtResource( 21 )
+script = ExtResource( 20 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2( 1076.32, 576.015 )
 shape = SubResource( 20 )
 
-[node name="Player" parent="." groups=[
-"player",
-] instance=ExtResource( 16 )]
-position = Vector2( 585.131, 340.032 )
-collision/safe_margin = 1.0
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 22.7679, 687.731 )
+position = Vector2( 8.51363, 855.22 )
 collision_layer = 2148532223
 collision_mask = 2148532223
 physics_material_override = SubResource( 3 )
@@ -133,487 +207,487 @@ physics_material_override = SubResource( 3 )
 [node name="Sprite248" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 30.224, -820.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite249" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.224, -819.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite237" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -820.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite238" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -820.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 42.2347, 7.27879 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite2" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 99.2348, 7.27879 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite3" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 180.235, 7.27879 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite4" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 261.235, 7.27879 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite5" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 342.235, 7.27879 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite6" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 423.235, 7.27879 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite7" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 504.235, 7.27879 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite8" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 584.833, 7.27879 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite9" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 665.715, 7.27879 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite13" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 321.235, -156.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite14" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 402.235, -156.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite15" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 482.833, -156.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite16" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 563.715, -156.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite17" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 321.235, -194.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite18" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 402.235, -194.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite19" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 482.833, -194.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite20" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 563.715, -194.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite33" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 642.465, -156.721 )
 scale = Vector2( 1.72578, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite37" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 321.235, -116.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite38" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 402.235, -116.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite39" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 482.833, -116.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite40" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 563.715, -116.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite41" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 642.715, -116.721 )
 scale = Vector2( 1.7362, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite47" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 321.235, -78.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite137" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 402.235, -78.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite138" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 482.833, -78.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite139" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 563.715, -78.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite140" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 642.715, -78.721 )
 scale = Vector2( 1.7362, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite34" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 642.716, -194.721 )
 scale = Vector2( 1.73624, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite58" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 30.7432, -427.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite59" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.341, -427.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite60" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -427.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite61" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -427.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite63" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 30.7432, -466.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite64" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.341, -466.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite65" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -466.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite66" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -466.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite68" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 30.7432, -506.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite69" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.341, -506.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite70" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -506.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite71" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -506.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite73" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 30.7432, -546.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite74" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.341, -546.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite75" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -546.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite76" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -546.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite78" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 30.7432, -585.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite79" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.341, -585.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite80" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -585.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite81" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -585.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite83" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 30.7432, -625.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite84" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.341, -625.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite85" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -625.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite86" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -625.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite88" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 30.7432, -663.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite89" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.341, -663.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite90" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -663.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite91" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -663.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite10" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 746.211, 7.27879 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite11" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 826.501, 7.27879 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite12" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 912.765, 7.38792 )
 scale = Vector2( 1.91084, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite57" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 995.117, 7.27879 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite62" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1075.41, 7.27879 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite67" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1161.67, 7.38792 )
 scale = Vector2( 1.91084, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite22" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 906.794, -50.4463 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 1.34143 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite24" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 907.168, -117.071 )
 rotation = 1.5708
 scale = Vector2( 1.3917, 1.35641 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite25" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 907.148, -183.446 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 1.35559 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite26" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 906.81, -252.035 )
 rotation = 1.5708
 scale = Vector2( 1.47353, 1.34206 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite53" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 19.7352, -371.658 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 1.1882 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite72" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 19.7352, -304.95 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 1.1882 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite77" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 19.7352, -238.023 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 1.1882 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite82" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 19.7352, -171.315 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 1.1882 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite87" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 19.7352, -135.57 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 1.1882 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite135" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 19.7913, -68.6434 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 1.1882 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite136" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 19.7352, -1.93509 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 1.1882 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite95" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1214.73, -352.522 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite96" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1214.73, -419.522 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite97" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1214.73, -486.522 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite98" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1214.73, -519.182 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite99" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1214.73, -586.182 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite100" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1214.73, -653.182 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite145" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1214.73, -714.182 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite164" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1214.73, -781.182 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite54" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1215.07, -1.61682 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite55" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1215.07, -64.6169 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite56" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1215.07, -131.617 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite92" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1215.07, -164.277 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite93" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1215.07, -231.277 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite94" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1215.07, -298.277 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 605.728, 222.186 )
@@ -631,31 +705,31 @@ shape = SubResource( 5 )
 position = Vector2( 334.444, -464.695 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite52" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.444, -437.695 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite49" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.444, -531.695 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite50" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.444, -598.695 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite51" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.382, -656.966 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 92.2057, -564.422 )
@@ -664,92 +738,92 @@ shape = SubResource( 6 )
 [node name="Sprite141" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 775.628, -598.382 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite142" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 856.628, -598.382 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite143" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 937.226, -598.382 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite144" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1018.11, -598.382 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite149" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 774.439, -598.382 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite150" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 855.439, -598.382 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite151" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 936.037, -598.382 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite152" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1018.11, -598.382 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite106" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 893.432, -835.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite107" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 974.432, -835.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite108" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1055.03, -835.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite109" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1137.1, -836.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite110" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1199.1, -835.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite111" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 786.403, -835.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite112" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 867.403, -835.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite113" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 948.001, -835.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite114" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1030.07, -835.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite115" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1108.07, -835.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 96.266, -558.429 )
@@ -758,97 +832,97 @@ shape = SubResource( 6 )
 [node name="Sprite116" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1137.1, -835.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite117" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1197.1, -836.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite118" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 786.403, -835.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite119" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 867.403, -835.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite120" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 948.001, -835.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite121" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1030.07, -835.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite122" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 1108.07, -835.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite123" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 628.121, -835.575 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite124" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 706.117, -835.575 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite125" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 277.422, -835.575 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite126" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 358.422, -835.575 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite127" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 439.021, -835.575 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite128" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 519.09, -836.242 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite130" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 88.422, -835.575 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite134" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 29.6891, -835.65 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite131" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 169.422, -835.575 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite132" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 250.021, -835.575 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite133" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 330.09, -836.242 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite129" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 599.089, -835.575 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="StaticBody2D"]
 visible = false
@@ -862,102 +936,102 @@ shape = SubResource( 7 )
 [node name="Sprite29" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 311.235, -156.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite30" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 392.235, -156.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite31" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 472.833, -156.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite32" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 553.715, -156.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite36" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 311.235, -194.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite146" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 392.235, -194.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite147" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 472.833, -194.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite148" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 553.715, -194.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite153" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 632.465, -156.721 )
 scale = Vector2( 1.72578, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite154" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 311.235, -116.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite155" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 392.235, -116.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite156" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 472.833, -116.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite157" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 553.715, -116.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite158" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 632.715, -116.721 )
 scale = Vector2( 1.7362, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite159" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 311.235, -78.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite160" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 392.235, -78.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite161" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 472.833, -78.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite162" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 553.715, -78.721 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite163" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 632.715, -78.721 )
 scale = Vector2( 1.7362, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite169" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 632.716, -194.721 )
 scale = Vector2( 1.73624, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 477.709, -137.657 )
@@ -970,42 +1044,42 @@ shape = SubResource( 9 )
 [node name="Sprite250" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 656.628, -416.382 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite251" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 737.628, -416.382 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite252" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 818.226, -416.382 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite253" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 899.11, -416.382 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite254" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 655.439, -416.382 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite255" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 736.439, -416.382 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite256" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 817.037, -416.382 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite257" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 899.11, -416.382 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 777.244, -415.793 )
@@ -1014,417 +1088,417 @@ shape = SubResource( 9 )
 [node name="Sprite165" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 30.7432, -427.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite166" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.341, -427.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite167" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -427.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite168" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -427.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite170" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 30.7432, -466.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite171" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.341, -466.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite172" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -466.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite173" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -466.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite174" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 30.7432, -506.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite175" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.341, -506.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite176" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -506.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite177" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -506.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite178" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 30.7432, -546.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite179" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.341, -546.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite180" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -546.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite181" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -546.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite182" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 30.7432, -585.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite183" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.341, -585.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite184" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -585.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite185" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -585.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite186" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 30.7432, -625.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite187" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.341, -625.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite188" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -625.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite189" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -625.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite190" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 30.7432, -663.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite191" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.341, -663.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite192" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -663.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite193" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -663.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite194" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.444, -464.695 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite195" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.444, -437.695 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite196" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.444, -531.695 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite197" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.444, -598.695 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite198" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.382, -656.966 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite199" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -546.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite200" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -546.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite201" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -585.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite202" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -585.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite203" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -625.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite204" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -625.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite205" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -665.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite206" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -665.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite207" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -704.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite208" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -704.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite209" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -744.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite210" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -744.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite211" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -782.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite212" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -782.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite213" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.444, -583.695 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite214" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.444, -556.695 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite215" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.444, -650.695 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite216" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.444, -717.695 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite217" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.382, -775.966 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite218" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -546.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite219" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -546.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite220" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -585.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite221" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -585.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite222" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -625.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite223" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -625.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite224" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -665.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite225" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -665.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite226" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -704.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite227" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -704.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite228" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -744.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite229" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 270.224, -744.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite230" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 192.224, -782.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite231" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 273.224, -782.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite239" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 33.224, -704.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite240" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.224, -704.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite241" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 33.224, -744.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite242" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.224, -744.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite243" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 33.224, -782.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite245" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 29.224, -704.993 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite246" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 29.224, -744.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite247" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 30.224, -782.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite244" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 111.224, -782.994 )
 scale = Vector2( 1.69453, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite232" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.444, -583.695 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite233" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.444, -556.695 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite234" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.444, -650.695 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite235" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.444, -717.695 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="Sprite236" type="Sprite" parent="StaticBody2D"]
 position = Vector2( 334.382, -777.966 )
 rotation = 1.5708
 scale = Vector2( 1.40731, 0.981838 )
-texture = ExtResource( 17 )
+texture = ExtResource( 18 )
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
 visible = false
@@ -1447,6 +1521,7 @@ rotation = 1.52367
 shape = SubResource( 11 )
 
 [node name="door" type="Area2D" parent="."]
+position = Vector2( -14.2543, 167.489 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door"]
 position = Vector2( 359.141, 385.303 )
@@ -1474,31 +1549,32 @@ motion_mirroring = Vector2( 2048, 0 )
 visible = false
 position = Vector2( 630.71, 485.006 )
 scale = Vector2( 1.57387, 1.18406 )
-texture = ExtResource( 20 )
+texture = ExtResource( 25 )
 
 [node name="2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 visible = false
 position = Vector2( 630.71, 485.006 )
 scale = Vector2( 1.57387, 1.18406 )
-texture = ExtResource( 20 )
+texture = ExtResource( 25 )
 
-[node name="arh" parent="." instance=ExtResource( 11 )]
-position = Vector2( -11.545, 2.57037 )
+[node name="arh" type="KinematicBody2D" parent="." instance=ExtResource( 24 )]
+position = Vector2( -25.7993, 170.059 )
+script = ExtResource( 21 )
 
 [node name="box_stone" type="RigidBody2D" parent="." groups=[
 "stone",
 ]]
-position = Vector2( -48, -45 )
+position = Vector2( -62.2543, 122.489 )
 mode = 2
 mass = 65535.0
 physics_material_override = SubResource( 15 )
 gravity_scale = 13.2
-script = ExtResource( 10 )
+script = ExtResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="box_stone"]
 position = Vector2( 946.938, 25.7436 )
 scale = Vector2( 1.47166, 1.45752 )
-texture = ExtResource( 18 )
+texture = ExtResource( 19 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="box_stone"]
 position = Vector2( 947.013, 26.0355 )
@@ -1507,7 +1583,7 @@ shape = SubResource( 16 )
 [node name="box_wood" type="RigidBody2D" parent="." groups=[
 "wood",
 ]]
-position = Vector2( -90, -32 )
+position = Vector2( -104.254, 135.489 )
 mode = 2
 mass = 65535.0
 physics_material_override = SubResource( 17 )
@@ -1516,20 +1592,69 @@ gravity_scale = 5.0
 [node name="Sprite" type="Sprite" parent="box_wood"]
 position = Vector2( 990.348, 202.67 )
 scale = Vector2( 1.50333, 1.47504 )
-texture = ExtResource( 14 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="box_wood"]
 position = Vector2( 990.602, 202.575 )
 shape = SubResource( 18 )
 one_way_collision_margin = 0.0
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 636.454, 276.041 )
-current = true
-zoom = Vector2( 0.65, 0.825 )
+[node name="UI" type="Control" parent="."]
+margin_left = 15.7457
+margin_top = 377.489
+margin_right = 57.7458
+margin_bottom = 417.489
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="Node" parent="." instance=ExtResource( 22 )]
+[node name="Joystick" type="Control" parent="UI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -300.0
+margin_right = 300.0
+margin_bottom = 1.52588e-05
+rect_pivot_offset = Vector2( 150, 150 )
+mouse_filter = 1
+script = ExtResource( 38 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="TextureRect" parent="UI/Joystick"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -128.0
+margin_top = -128.0
+margin_right = 128.0
+margin_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 128, 128 )
+texture = ExtResource( 39 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Handle" type="TextureRect" parent="UI/Joystick/Background"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 64, 64 )
+texture = ExtResource( 40 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
 pause_mode = 2
-process_priority = 999999999
+position = Vector2( 622.2, 443.53 )
+zoom = Vector2( 0.65, 0.825 )
 [connection signal="body_entered" from="Area2D" to="Area2D/AnimatedSprite" method="_on_Area2D_body_entered"]
-[connection signal="body_entered" from="door" to="Player" method="_on_door_body_entered"]

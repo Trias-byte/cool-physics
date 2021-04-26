@@ -23,9 +23,7 @@ func _ready():
 
 func _process(delta):
 	
-	if global_var.lives == 0 and global_var.punto != null:
-		global_var.lives = 4
-		global_position = global_var.punto
+
 	
 	if Input.is_action_just_pressed("ui_select") and open_door:
 		$spr.animation = "open_door"
@@ -40,22 +38,26 @@ func _process(delta):
 		$spr.self_modulate.a8 += 5
 		shield = false
 	
-	if swim:
-		$spr.animation = "swim"
-		$spr.playing = true
-		speed = 200
-		jump_speed = 500
-		if Input.is_action_just_pressed("ui_up"):
-			velocity.y = -jump_speed
-	else:
-		speed = 350
-		jump_speed = 900
-		gravity = 1300
-	
-	
 
-func _physics_process(delta):
-	_move(delta)
+	
+		
+
+
+
+
+
+	if $"../../UI/Joystick".is_working:
+		if ($"../../UI/Joystick".output)[0] > -0.5 and ($"../../UI/Joystick".output)[0] < 0.5 and ($"../../UI/Joystick".output)[1] < -0.5:
+			velocity.y = -jump_speed
+			direction.y = 1
+		else:
+			var _velocity = move_and_slide($"../../UI/Joystick".output * speed)
+	#_move(delta)
+	jump_speed = 600
+	gravity = 1300
+	velocity.y += gravity*delta
+	
+	move_and_slide(velocity,Vector2(0,-1))
 
 
 
@@ -111,41 +113,17 @@ func _move(delta):
 		elif get_col.collider.is_in_group("enemy") and get_col.normal == Vector2(0,-1):
 			get_col.collider.queue_free()
 
-func _resistir():
-	shield = true
-	velocity.y = -jump_speed
-	
-	if $time_shield.is_stopped():
-		$time_shield.start()
 
-func _on_swim_zone_body_entered(body):
-	if body.get_name() == get_name():
-		swim = true
 
-func _on_swim_zone_body_exited(body):
-	if body.get_name() == get_name():
-		swim = false
 
-func _on_Flag_body_entered(body):
-	if body.get_name() == get_name():
-		$"../Flag/spr".animation = "flag"
-		global_var.punto = $"../Flag/spr".global_position
 
-func _on_Enemy_barnacle_body_entered(body):
-	if body.get_name() == get_name():
-		if body.shield == false:
-			_resistir()
-			global_var.lives -= 1
+
+
+
 			
-func _on_Switch_body_entered(body):
-	if body.get_name() == get_name():
-		$"../Switch/spr".frame = 1
-		$"../Door/spr".animation = "open"
-		$"../Door/spr1".animation = "open"
 
-func _on_Door_body_entered(body):
-	if body is KinematicBody2D and $"../Door/spr".animation == "open":
-		open_door = true
+
+
 
 
 
