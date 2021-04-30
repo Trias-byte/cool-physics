@@ -72,3 +72,7 @@ func _on_door_body_entered(body):
 	if body.is_in_group('player'):
 		global_var.door_entered = true
 	pass # Replace with function body.
+
+
+
+

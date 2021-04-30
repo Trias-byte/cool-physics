@@ -116,7 +116,7 @@ extents = Vector2( 205.485, 82.4369 )
 extents = Vector2( 163.883, 25.5605 )
 
 [sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 52.2484, 8.03979 )
+extents = Vector2( 46.688, 8.03979 )
 
 [sub_resource type="RectangleShape2D" id=13]
 extents = Vector2( 109.619, 3.81128 )
@@ -707,7 +707,7 @@ position = Vector2( 605.728, 222.186 )
 shape = SubResource( 6 )
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 615.908, -1050.47 )
+position = Vector2( 614.573, -1050.47 )
 shape = SubResource( 6 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
@@ -1524,12 +1524,22 @@ position = Vector2( 96.266, -558.429 )
 shape = SubResource( 8 )
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 991.092, -544.511 )
+position = Vector2( 937.862, -583.586 )
+rotation = 0.890118
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 1047.85, -776.193 )
 rotation = 0.890118
 shape = SubResource( 12 )
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 1034.39, -403.721 )
+rotation = 1.52367
+shape = SubResource( 13 )
+
+[node name="CollisionShape2D16" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 689.794, -328.516 )
 rotation = 1.52367
 shape = SubResource( 13 )
 
@@ -1669,6 +1679,7 @@ __meta__ = {
 pause_mode = 2
 position = Vector2( 622.2, 443.53 )
 zoom = Vector2( 0.65, 0.825 )
+
 [connection signal="button_up" from="Node2D/Button" to="arh" method="_on_Button_button_up"]
 [connection signal="body_entered" from="Area2D" to="Area2D/AnimatedSprite" method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="door" to="Node2D/Player" method="_on_door_body_entered"]
