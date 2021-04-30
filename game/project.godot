@@ -27,7 +27,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Indie Libre - Platformer 2D"
-run/main_scene="res://Test/TestScene.tscn"
+run/main_scene="res://menu.tscn"
 config/icon="res://Graphics/PNG/Players/Variable sizes/Blue/alienBlue_swim1.png"
 
 [autoload]
